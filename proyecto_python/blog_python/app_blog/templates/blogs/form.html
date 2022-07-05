@@ -1,0 +1,25 @@
+<from enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% for n in formulario %}
+
+        <div class="mb-3">
+            <label for="" class="form-label">{{n.label}}</label>
+            <input 
+            type="{{n.field.widget.input_type}}"
+            class="form-control" 
+            name="{{n.name}}" 
+            id="" 
+            aria-describedby="helpId" 
+            placeholder="{{n.label}}"
+            value="{{n.value | default:'' }}"
+            
+            />
+
+        </div>
+    {% endfor %}
+    
+    <input name="" id="" class="btn btn-success" type="submit" value="Enviar">
+
+
+
+</from>
